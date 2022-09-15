@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 5em;
+  background: #bbbbbb;
+}
+body nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 5em;
+  height: 5em;
+  background: #757575;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: 0.5s;
+  transition-delay: 0.8s;
+}
+body nav.active {
+  width: 12em;
+  height: 12em;
+  transition-delay: 0s;
+}
+body nav.active span {
+  width: 45px;
+  height: 45px;
+  background: #505050;
+  transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+}
+body nav.active span ion-icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+body nav.active span img {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  border: 0.1rem solid #eeeeee;
+}
+body nav.active span img:hover {
+  filter: drop-shadow(0 0 2px #eeeeee) drop-shadow(0 0 5px #eeeeee) drop-shadow(0 0 15px #eeeeee);
+}
+body nav.active span:hover ion-icon {
+  color: #eeeeee;
+  filter: drop-shadow(0 0 2px #eeeeee) drop-shadow(0 0 5px #eeeeee);
+}
+body nav span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+  transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+}
+body nav span ion-icon {
+  font-size: 0rem;
+  transition: 0.5s;
+}
+body nav span img {
+  width: 0;
+  height: 0;
+  transition: all ease 0.5s;
+}
+body #blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  gap: 0.5rem;
+  color: #757575;
+  text-decoration: none;
+  transition: all ease 0.5s;
+}
+body #blog:hover {
+  color: #eeeeee;
+}
+
+/*# sourceMappingURL=style.css.map */

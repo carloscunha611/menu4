@@ -1,0 +1,93 @@
+body {
+  @include display(flex, center, center);
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 5em;
+  background: $color-bg;
+
+  nav {
+    @include display(flex, center, center);
+    position: relative;
+    width: 5em;
+    height: 5em;
+    background: $color-primary;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+    &.active {
+      width: 12em;
+      height: 12em;
+      transition-delay: 0s;
+
+      span {
+        width: 45px;
+        height: 45px;
+        background: $color-bgIcon;
+        transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+
+        ion-icon {
+          font-size: 1.5rem;
+          color: $color-icon;
+        }
+
+        img {
+          width: 2.3rem;
+          height: 2.3rem;
+          border-radius: 50%;
+          border: 0.1rem solid $color-hoverIcon;
+          &:hover {
+            filter: drop-shadow(0 0 2px $color-hoverIcon)
+              drop-shadow(0 0 5px $color-hoverIcon)
+              drop-shadow(0 0 15px $color-hoverIcon);
+          }
+        }
+
+        &:hover {
+          ion-icon {
+            color: $color-hoverIcon;
+            filter: drop-shadow(0 0 2px $color-hoverIcon)
+              drop-shadow(0 0 5px $color-hoverIcon);
+          }
+        }
+      }
+    }
+
+    span {
+      @include display(flex, center, center);
+      position: absolute;
+      width: 0.5em;
+      height: 0.5em;
+      background: $color-dots;
+      border-radius: 50%;
+      transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+      transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
+      transition-delay: calc(0.1s * var(--i));
+
+      ion-icon {
+        font-size: 0rem;
+        transition: 0.5s;
+      }
+
+      img {
+        width: 0;
+        height: 0;
+        transition: all ease 0.5s;
+      }
+    }
+  }
+
+  #blog {
+    @include display(flex, center, center);
+    text-align: center;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    gap: 0.5rem;
+    color: $color-primary;
+    text-decoration: none;
+    transition: all ease 0.5s;
+    &:hover {
+      color: $color-hoverIcon;
+    }
+  }
+}

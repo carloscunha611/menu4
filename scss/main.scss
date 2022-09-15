@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import './colors/colors.scss';
+@import './tools/mixin.scss';
+@import './pages/home.scss';
